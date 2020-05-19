@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
+import {Routes, RouterModule} from '@angular/router';
+import {LoginComponent} from './components/login/login.component';
 
-// import { ComponentsComponent } from './components/components.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'index', pathMatch: 'full' },
-    // { path: 'index',                component: ComponentsComponent },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
@@ -16,7 +16,6 @@ const routes: Routes = [
         BrowserModule,
         RouterModule.forRoot(routes)
     ],
-    exports: [
-    ],
+    exports: [RouterModule],
 })
 export class AppRoutingModule { }
