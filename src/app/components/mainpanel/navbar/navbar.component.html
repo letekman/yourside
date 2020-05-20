@@ -4,14 +4,14 @@
             <a class="navbar-brand" href="#pablo">
                 Navbar
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
                 <span class="navbar-toggler-bar bar1"></span>
                 <span class="navbar-toggler-bar bar2"></span>
                 <span class="navbar-toggler-bar bar3"></span>
             </button>
         </div>
         <div class="collapse navbar-collapse" id="navigation">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#pablo">
                         Create report
@@ -29,11 +29,11 @@
             </ul>
         </div>
         <div class="collapse navbar-collapse my-2 my-lg-0 flex-row-reverse">
-        <div class="navbar-nav ">
-            <div class="nav-item">
-                <a class="nav-link" href="#pablo">Sign out</a>
+            <div class="navbar-nav ">
+                <div class="nav-item">
+                    <a class="nav-link" href="#pablo">Sign out</a>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 </nav>
