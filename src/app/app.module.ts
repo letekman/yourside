@@ -7,11 +7,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app.routing';
+import { NavbarComponent } from './components/mainpanel/navbar/navbar.component';
+import { MainpanelComponent } from './components/mainpanel/mainpanel/mainpanel.component';
+import { FooterComponent } from './components/mainpanel/footer/footer.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginComponent,
+        NavbarComponent,
+        MainpanelComponent,
+        FooterComponent,
     ],
     imports: [
         BrowserAnimationsModule,
