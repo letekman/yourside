@@ -12,6 +12,7 @@ import { MainpanelComponent } from './components/mainpanel/mainpanel/mainpanel.c
 import { FooterComponent } from './components/mainpanel/footer/footer.component';
 import { TeacherprofileComponent } from './components/mainpanel/teacherreviews/teacherprofile/teacherprofile.component';
 import {TeacherreviewsComponent} from './components/mainpanel/teacherreviews/teacherreviews/teacherreviews.component';
+import { ReviewTeacherComponent } from './review-teacher/review-teacher.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import {TeacherreviewsComponent} from './components/mainpanel/teacherreviews/tea
         FooterComponent,
         TeacherprofileComponent,
         TeacherreviewsComponent,
+        ReviewTeacherComponent,
     ],
     imports: [
         BrowserAnimationsModule,
