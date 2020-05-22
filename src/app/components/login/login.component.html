@@ -1,11 +1,13 @@
-
+<div>
+    Logged in as {{roles}}.
+</div>
 <!--<div class="page-header">-->
 <!--<div class="page-header-image" style="background-image:url(assets/img/login.jpg)"></div>-->
 <div class="row d-flex justify-content-center">
     <div class="container col-md-auto">
         <div class="colcontent-center">
             <div class="card card-login card-plain">
-                <form class="form" method="" action="">
+                <form class="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
                     <div class="header header-primary text-center">
                         <div class="logo-container">
                             <img src="assets/img/yourside-logo.png" alt="">
@@ -16,13 +18,20 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Login">
+                            <input type="text" name="username"  [(ngModel)]="form.username"  #username="ngModel" class="form-control" placeholder="Login" required>
+                            <div *ngIf="f.submitted && username.invalid">
+                                <div *ngIf="username.errors.required">Username is required</div>
+                            </div>
                         </div>
                         <div class="input-group form-group-no-border input-lg">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"></span>
                             </div>
-                            <input type="password" placeholder="Password" class="form-control"/>
+                            <input type="password" name="password" [(ngModel)]="form.password"  #password="ngModel"  placeholder="Password" class="form-control" required minlength="6"/>
+                            <div *ngIf="f.submitted && password.invalid">
+                                <div *ngIf="password.errors.required">Password is required</div>
+                                <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                            </div>
                         </div>
                     </div>
                     <div class="footer text-center">
