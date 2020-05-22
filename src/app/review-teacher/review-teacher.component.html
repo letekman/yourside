@@ -1,0 +1,166 @@
+<div class="wrapper" style="margin: 0;padding:0">
+    <div style="min-height: 100vh;
+                 max-height: 999px;"
+            class="page-header page-header-small" filter-color="orange">
+        <div class="container">
+            <div class="content-center">
+                <h3 class="title">How would you rate this teacher's job?</h3>
+                <form class="content" [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+                    <div class="social-description">
+                        <h4>Commitment into case:</h4>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="comRate1" name="commitmentRate"
+                                   formControlName="commitmentRate" value="1">
+                            <label class="custom-control-label" for="comRate1">1</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="comRate2" name="commitmentRate"
+                                   formControlName="commitmentRate" value="2">
+                            <label class="custom-control-label" for="comRate2">2</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="comRate3" name="commitmentRate"
+                                   formControlName="commitmentRate" value="3">
+                            <label class="custom-control-label" for="comRate3">3</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="comRate4" name="commitmentRate"
+                                   formControlName="commitmentRate" value="4">
+                            <label class="custom-control-label" for="comRate4">4</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="comRate5" name="commitmentRate"
+                                   formControlName="commitmentRate" value="5">
+                            <label class="custom-control-label" for="comRate5">5</label>
+                        </div>
+
+                        <div class="form-group shadow-textarea" style="padding-top: 20px;">
+                            <textarea class="form-control z-depth-1 textarea" id="commitmentComment" rows="2"
+                                      placeholder="Write your comment" formControlName="commitmentComment">
+
+                            </textarea>
+                        </div>
+
+                    </div>
+                    <div class="social-description">
+                        <h4>Quality of contact:</h4>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="QualityRate1" name="qualityRate"
+                                   formControlName="qualityRate" value="1">
+                            <label class="custom-control-label" for="QualityRate1">1</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="QualityRate2" name="qualityRate"
+                                   formControlName="qualityRate" value="2">
+                            <label class="custom-control-label" for="QualityRate2">2</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="QualityRate3" name="qualityRate"
+                                   formControlName="qualityRate" value="3">
+                            <label class="custom-control-label" for="QualityRate3">3</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="QualityRate4" name="qualityRate"
+                                   formControlName="qualityRate" value="4">
+                            <label class="custom-control-label" for="QualityRate4">4</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="QualityRate5" name="qualityRate"
+                                   formControlName="qualityRate" value="5">
+                            <label class="custom-control-label" for="QualityRate5">5</label>
+                        </div>
+
+                        <div class="form-group shadow-textarea" style="padding-top: 20px;">
+                            <textarea class="form-control z-depth-1 textarea" id="qualityComment" rows="2"
+                                      placeholder="Write your comment" formControlName="qualityComment"></textarea>
+                        </div>
+                    </div>
+                    <div class="social-description">
+                        <h4>Speed of the reaction:</h4>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="SpeedRate1" name="speedRate"
+                                   formControlName="speedRate" value="1">
+                            <label class="custom-control-label" for="SpeedRate1">1</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="SpeedRate2" name="speedRate"
+                                   formControlName="speedRate" value="2">
+                            <label class="custom-control-label" for="SpeedRate2">2</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="SpeedRate3" name="speedRate"
+                                   formControlName="speedRate" value="3">
+                            <label class="custom-control-label" for="SpeedRate3">3</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="SpeedRate4" name="speedRate"
+                                   formControlName="speedRate" value="4">
+                            <label class="custom-control-label" for="SpeedRate4">4</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="SpeedRate5" name="speedRate"
+                                   formControlName="speedRate" value="5">
+                            <label class="custom-control-label" for="SpeedRate5">5</label>
+                        </div>
+
+                        <div class="form-group shadow-textarea" style="padding-top: 20px;">
+                            <textarea class="form-control z-depth-1 textarea" id="SpeedComment" rows="2" placeholder="Write your comment"
+                                      formControlName="speedComment"></textarea>
+                        </div>
+                    </div>
+                    <div class="social-description">
+                        <h4>Was it resolved successfully:</h4>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="SuccessRate1" name="successRate"
+                                   formControlName="successRate" value="1">
+                            <label class="custom-control-label" for="SuccessRate1">1</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="SuccessRate2" name="successRate"
+                                   formControlName="successRate" value="2">
+                            <label class="custom-control-label" for="SuccessRate2">2</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="SuccessRate3" name="successRate"
+                                   formControlName="successRate" value="3">
+                            <label class="custom-control-label" for="SuccessRate3">3</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="SuccessRate4" name="successRate"
+                                   formControlName="successRate" value="4">
+                            <label class="custom-control-label" for="SuccessRate4">4</label>
+                        </div>
+
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="SuccessRate5" name="successRate"
+                                   formControlName="successRate" value="5">
+                            <label class="custom-control-label" for="SuccessRate5">5</label>
+                        </div>
+
+                        <div class="form-group shadow-textarea" style="padding-top: 20px;">
+                            <textarea class="form-control z-depth-1 textarea" id="SuccessComment" rows="2" placeholder="Write your comment"
+                                      formControlName="successComment"></textarea>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-round" type="submit" style="background-color: #f47c6d">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbRating} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { MainpanelComponent } from './components/mainpanel/mainpanel/mainpanel.c
 import { FooterComponent } from './components/mainpanel/footer/footer.component';
 import { TeacherprofileComponent } from './components/mainpanel/teacherreviews/teacherprofile/teacherprofile.component';
 import {TeacherreviewsComponent} from './components/mainpanel/teacherreviews/teacherreviews/teacherreviews.component';
+import { ReviewTeacherComponent } from './review-teacher/review-teacher.component';
 
 @NgModule({
     declarations: [
@@ -22,12 +23,14 @@ import {TeacherreviewsComponent} from './components/mainpanel/teacherreviews/tea
         FooterComponent,
         TeacherprofileComponent,
         TeacherreviewsComponent,
+        ReviewTeacherComponent,
     ],
     imports: [
         BrowserAnimationsModule,
         NgbModule,
         FormsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
