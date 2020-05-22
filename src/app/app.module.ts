@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbRating} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
@@ -29,7 +29,8 @@ import { ReviewTeacherComponent } from './review-teacher/review-teacher.componen
         BrowserAnimationsModule,
         NgbModule,
         FormsModule,
-        AppRoutingModule
+        AppRoutingModule,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
