@@ -13,6 +13,9 @@ import { FooterComponent } from './components/mainpanel/footer/footer.component'
 import { TeacherprofileComponent } from './components/mainpanel/teacherreviews/teacherprofile/teacherprofile.component';
 import {TeacherreviewsComponent} from './components/mainpanel/teacherreviews/teacherreviews/teacherreviews.component';
 import { ReviewTeacherComponent } from './review-teacher/review-teacher.component';
+import {httpInterceptorProviders} from './auth/auth-interceptor';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -28,11 +31,13 @@ import { ReviewTeacherComponent } from './review-teacher/review-teacher.componen
     imports: [
         BrowserAnimationsModule,
         NgbModule,
+        BrowserModule,
+        HttpClientModule,
         FormsModule,
         AppRoutingModule,
         ReactiveFormsModule
     ],
-    providers: [],
+    providers: [httpInterceptorProviders],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
