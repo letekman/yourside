@@ -16,6 +16,7 @@ import { ReviewTeacherComponent } from './review-teacher/review-teacher.componen
 import {httpInterceptorProviders} from './auth/auth-interceptor';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
+import { ReportComponent } from './components/report/report.component';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import {HttpClientModule} from '@angular/common/http';
         TeacherprofileComponent,
         TeacherreviewsComponent,
         ReviewTeacherComponent,
+        ReportComponent,
     ],
     imports: [
         BrowserAnimationsModule,

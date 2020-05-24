@@ -1,0 +1,86 @@
+<div id="report">
+    <div class="row form-group offset-1">
+        <h4>Create a report</h4>
+    </div>
+    <div class="row form-group offset-1">
+        <div class="col-md-6 col-lg-4">
+            <p class="category">State your confidentiality preferences</p>
+            <div class="form-check form-check-radio">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="anonRadios" id="anonRadio1" value="option1">
+                    <span class="form-check-sign"></span>
+                    I want to remain anonymous
+                </label>
+            </div>
+            <div class="form-check form-check-radio">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="anonRadios" id="anonRadio2" value="option2" checked>
+                    <span class="form-check-sign"></span>
+                    I want the teacher to know who I am
+                </label>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row form-group offset-1">
+        <div class="col-md-6 col-lg-4">
+            <p class="category">Provide the Full name of the perpetrator</p>
+            <div class="form-group">
+                <input type="text" value="" placeholder="Full name" class="form-control" #perp />
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row form-group offset-1">
+        <div class="col-md-6 col-lg-4">
+            <p class="category">Provide the Full name of the victim</p>
+            <div class="form-group">
+                <input type="text" value="" placeholder="Full name" class="form-control" #victim />
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row form-group offset-1">
+        <div class="col-md-6 col-lg-4">
+            <p class="category">Which type of bullying did you encounter?</p>
+            <div class="input-group mb-3">
+                <select class="custom-select" id="bullyingTypeSelect" #type>
+                    <option selected>Physical</option>
+                    <option value="1">Psychological</option>
+                    <option value="2">Social Exclusion</option>
+                    <option value="3">Cyberbullying</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row form-group offset-1">
+        <div class="col-md-6 col-lg-4 ">
+            <p class="category">Describe the incident in detail</p>
+            <div class="form-group">
+                <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Put your description here..." #description></textarea>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row form-group offset-1">
+        <div class="col-md-6 col-lg-4">
+            <p class="category">Which teacher would you like to send the report to?</p>
+            <div class="input-group mb-3">
+                <select class="custom-select" id="teacherSelect" #teacher>
+                    <option selected>Physical</option>
+                    <option value="1">Psychological</option>
+                    <option value="2">Social Exclusion</option>
+                    <option value="3">Cyberbullying</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row form-group offset-1">
+        <div class="col-md-6 col-lg-4">
+            <button type="button" class="btn btn-primary btn-lg " (click)="submitReport()">Submit report</button>
+        </div>
+    </div>
+    <br>
+</div>
