@@ -17,6 +17,7 @@ import {httpInterceptorProviders} from './auth/auth-interceptor';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { ReportComponent } from './components/report/report.component';
+import { TeacherReportComponent } from './components/teacher-report/teacher-report.component';
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { ReportComponent } from './components/report/report.component';
         TeacherreviewsComponent,
         ReviewTeacherComponent,
         ReportComponent,
+        TeacherReportComponent
     ],
     imports: [
         BrowserAnimationsModule,
