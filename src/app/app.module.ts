@@ -18,6 +18,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { ReportComponent } from './components/report/report.component';
 import { TeacherReportComponent } from './components/teacher-report/teacher-report.component';
+import { ReportListCaseComponent } from './components/report-list-case/report-list-case.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { TeacherReportComponent } from './components/teacher-report/teacher-repo
         TeacherreviewsComponent,
         ReviewTeacherComponent,
         ReportComponent,
-        TeacherReportComponent
+        TeacherReportComponent,
+        ReportListCaseComponent
     ],
     imports: [
         BrowserAnimationsModule,
@@ -39,7 +41,7 @@ import { TeacherReportComponent } from './components/teacher-report/teacher-repo
         HttpClientModule,
         FormsModule,
         AppRoutingModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
     providers: [httpInterceptorProviders],
     bootstrap: [AppComponent]

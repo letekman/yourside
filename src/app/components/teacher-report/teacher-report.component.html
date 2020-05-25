@@ -1,0 +1,16 @@
+<div class="wrapper">
+    <div style="min-height: 100vh;
+                 max-height: 2000px; margin: 0; padding: 0;"
+         class="page-header page-header-small" filter-color="orange">
+        f
+        <div class="container">
+            <h3>Active cases: </h3>
+            <ol>
+                <li  *ngFor="let report of reports" class="case">
+                    <app-report-list-case [report]="report"></app-report-list-case>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
