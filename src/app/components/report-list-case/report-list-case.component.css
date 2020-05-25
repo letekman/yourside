@@ -1,0 +1,13 @@
+.element {
+    color: black;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.column-1 { width: 200px; }
+.column-2 { width: 300px; }
+.column-3 { width: 225px; }
+.column-4 { width: 250px; }
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
