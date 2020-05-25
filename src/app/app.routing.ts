@@ -7,6 +7,7 @@ import {MainpanelComponent} from './components/mainpanel/mainpanel/mainpanel.com
 import {ReviewTeacherComponent} from './review-teacher/review-teacher.component';
 import {TeacherreviewsComponent} from './components/mainpanel/teacherreviews/teacherreviews/teacherreviews.component';
 import {ReportComponent} from './components/report/report.component';
+import {TeacherReportComponent} from "./components/teacher-report/teacher-report.component";
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
     { path: 'panel', component: MainpanelComponent},
     { path: 'review', component: ReviewTeacherComponent},
     { path: 'teacherList', component: TeacherreviewsComponent},
-    { path: 'createReport', component: ReportComponent}
+    { path: 'createReport', component: ReportComponent},
+    { path: 'teacherReports', component: TeacherReportComponent}
 ];
 
 @NgModule({
