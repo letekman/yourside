@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ReportModel} from "./report-list-case.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-report-list-case',
@@ -9,9 +10,12 @@ import {ReportModel} from "./report-list-case.model";
 export class ReportListCaseComponent implements OnInit {
   @Input()
   report: ReportModel;
-  constructor() { }
+  link: string;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.link = `${this.report.id}`;
   }
 
 }
