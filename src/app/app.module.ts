@@ -19,6 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { ReportComponent } from './components/report/report.component';
 import { TeacherReportComponent } from './components/teacher-report/teacher-report.component';
 import { ReportListCaseComponent } from './components/report-list-case/report-list-case.component';
+import { ReportDetailedComponent } from './components/report-detailed/report-detailed.component';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { ReportListCaseComponent } from './components/report-list-case/report-li
         ReviewTeacherComponent,
         ReportComponent,
         TeacherReportComponent,
-        ReportListCaseComponent
+        ReportListCaseComponent,
+        ReportDetailedComponent
     ],
     imports: [
         BrowserAnimationsModule,
