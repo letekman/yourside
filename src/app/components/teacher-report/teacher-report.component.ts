@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ReportModel} from "../report-list-case/report-list-case.model";
+import {TeacherReportService} from "../../services/teacher-report.service";
 
 
 @Component({
@@ -9,17 +10,16 @@ import {ReportModel} from "../report-list-case/report-list-case.model";
 })
 export class TeacherReportComponent implements OnInit {
 
-  reports = [] = [
-    new ReportModel(1, 'Bystander', 'William', 'Gregory', 'Physical', 'unread'),
-    new ReportModel(2, 'Bystander','Helga', 'Donald', 'Cyberbullying', 'unread'),
-    new ReportModel(3, 'Bystander','Kate', 'Mark', 'Psychological', 'in progress'),
-    new ReportModel(4, 'Bystander','Julian', 'Monica', 'Physical', 'in progress'),
-    new ReportModel(5, 'Bystander','Henry', 'Emma', 'Social Exclusion', 'unresolvable')
-  ];
+  reports: ReportModel[];
 
-  constructor() { }
+  getReports() {
+    this.teacherReportService.getReports().subscribe(reports => this.reports = reports);
+  }
+
+  constructor(private teacherReportService: TeacherReportService) { }
 
   ngOnInit(): void {
+    this.getReports();
   }
 
 }
