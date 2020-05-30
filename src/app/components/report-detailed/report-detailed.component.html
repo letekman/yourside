@@ -4,19 +4,19 @@
         </div>
         <div class="container">
             <div class="content-center">
-                <h3 class="title">Anonym</h3>
+                <h3 class="title">Anonym ({{report.role}}) </h3>
                 <div class="elements">
                     <div>
                         <h3>Victim</h3>
-                        <p>Gregory Smith</p>
+                        <p>{{report.victim}}</p>
                     </div>
                     <div class="property">
                         <h3>Perpetrator</h3>
-                        <p>William Johnson</p>
+                        <p>{{report.perp}}</p>
                     </div>
                     <div>
                         <h3>Type</h3>
-                        <p>Physical</p>
+                        <p>{{report.type}}</p>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
     <div class="section">
         <div class="container">
             <h3 class="title">Description</h3>
-            <h5 class="description" style="color: black">Situation happened after math class. William hit Gregory's head with his backpack. I saw it happen a couple of times.</h5>
+            <h5 class="description" style="color: black">{{report.description}}</h5>
             <div class="row">
                 <div class="col-md-12">
                     <h4>Mark the status of this case: </h4>
