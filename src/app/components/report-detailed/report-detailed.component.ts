@@ -23,7 +23,6 @@ export class ReportDetailedComponent implements OnInit {
 
   ngOnInit(): void {
     this.getReport();
-    // console.log(this.report)
   }
 
 }
