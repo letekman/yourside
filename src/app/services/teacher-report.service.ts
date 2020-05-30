@@ -10,8 +10,8 @@ export class TeacherReportService {
 
   constructor(private http: HttpClient) { }
   
-  getReports(): Observable<ReportModel[]> {
-    const url = `http://localhost:8080/restApi/reports`;
+  getReports(userId: number): Observable<ReportModel[]> {
+    const url = `http://localhost:8080/restApi/reports?id=${userId}&flag=teacher`;
     return this.http.get<ReportModel[]>(url);
   }
   

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ReportModel} from "../report-list-case/report-list-case.model";
 import {TeacherReportService} from "../../services/teacher-report.service";
+import {CurrentUserService} from "../../services/current-user.service";
 
 
 @Component({
@@ -12,14 +13,21 @@ export class TeacherReportComponent implements OnInit {
 
   reports: ReportModel[];
 
-  getReports() {
-    this.teacherReportService.getReports().subscribe(reports => this.reports = reports);
+  getReports(userId: number) {
+    this.teacherReportService.getReports(userId).subscribe(reports => this.reports = reports);
   }
 
-  constructor(private teacherReportService: TeacherReportService) { }
+  getUser() {
+    this.currentUserService.getUser().subscribe(user => {
+      const userId = user.id;
+      this.getReports(userId);
+    })
+  }
+
+  constructor(private teacherReportService: TeacherReportService, private currentUserService: CurrentUserService) { }
 
   ngOnInit(): void {
-    this.getReports();
+    this.getUser()
   }
 
 }
