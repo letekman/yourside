@@ -2,10 +2,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbRating} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app.routing';
 import { NavbarComponent } from './components/mainpanel/navbar/navbar.component';
 import { MainpanelComponent } from './components/mainpanel/mainpanel/mainpanel.component';
@@ -21,6 +19,7 @@ import { TeacherReportComponent } from './components/teacher-report/teacher-repo
 import { ReportListCaseComponent } from './components/report-list-case/report-list-case.component';
 import { ReportDetailedComponent } from './components/report-detailed/report-detailed.component';
 import { HistoryReportsComponent } from './components/history-reports/history-reports.component';
+import { StatusFormComponent } from './components/status-form/status-form.component';
 
 @NgModule({
     declarations: [
@@ -36,7 +35,8 @@ import { HistoryReportsComponent } from './components/history-reports/history-re
         TeacherReportComponent,
         ReportListCaseComponent,
         ReportDetailedComponent,
-        HistoryReportsComponent
+        HistoryReportsComponent,
+        StatusFormComponent
     ],
     imports: [
         BrowserAnimationsModule,

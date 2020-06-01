@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ReportModel} from "../report-list-case/report-list-case.model";
 import {TeacherReportService} from "../../services/teacher-report.service";
 import {CurrentUserService} from "../../services/current-user.service";
+import {UserModel} from "../login/user.model";
 
 
 @Component({
@@ -12,15 +13,25 @@ import {CurrentUserService} from "../../services/current-user.service";
 export class TeacherReportComponent implements OnInit {
 
   reports: ReportModel[];
+  user: UserModel;
+  role: string
 
   getReports(userId: number) {
-    this.teacherReportService.getReports(userId, "teacher", false).subscribe(reports => this.reports = reports);
+    this.role = this.user.roles[0]['name'];
+    if (this.role == 'ROLE_TEACHER')
+    {
+      this.teacherReportService.getReports(userId, "teacher", false).subscribe(reports => this.reports = reports);
+    }
+    else if (this.role == 'ROLE_STUDENT')
+    {
+      this.teacherReportService.getReports(userId, "student", false).subscribe(reports => this.reports = reports);
+    }
   }
 
   getUser() {
     this.currentUserService.getUser().subscribe(user => {
-      const userId = user.id;
-      this.getReports(userId);
+      this.user = user;
+      this.getReports(user.id);
     })
   }
 
