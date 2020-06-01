@@ -14,7 +14,7 @@ export class TeacherReportComponent implements OnInit {
   reports: ReportModel[];
 
   getReports(userId: number) {
-    this.teacherReportService.getReports(userId).subscribe(reports => this.reports = reports);
+    this.teacherReportService.getReports(userId, "teacher", false).subscribe(reports => this.reports = reports);
   }
 
   getUser() {

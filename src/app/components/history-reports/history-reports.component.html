@@ -4,7 +4,7 @@
          class="page-header page-header-small" filter-color="orange">
         f
         <div class="container">
-            <h3>Active cases: </h3>
+            <h3>Resolved cases: </h3>
             <ol>
                 <li  *ngFor="let report of reports" class="case">
                     <app-report-list-case [report]="report" [link]="report.id"></app-report-list-case>
