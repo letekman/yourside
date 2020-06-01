@@ -26,39 +26,8 @@
         <div class="container">
             <h3 class="title">Description</h3>
             <h5 class="description" style="color: black">{{report.description}}</h5>
-            <div class="row">
-                <div class="col-md-12">
-                    <h4>Mark the status of this case: </h4>
-                    <div class="form-check form-check-radio">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="status" id="read" value="read" checked>
-                            <span class="form-check-sign"></span>
-                            READ
-                        </label>
-                    </div>
-                    <div class="form-check form-check-radio">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="status" id="inprogress" value="inprogress">
-                            <span class="form-check-sign"></span>
-                            IN PROGRESS
-                        </label>
-                    </div>
-                    <div class="form-check form-check-radio">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="status" id="resolved" value="resolved">
-                            <span class="form-check-sign"></span>
-                            RESOLVED
-                        </label>
-                    </div>
-                    <div class="form-check form-check-radio">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="status" id="unresolvable" value="unresolvable">
-                            <span class="form-check-sign"></span>
-                            UNRESOLVABLE
-                        </label>
-                    </div>
-                    <button class="btn btn-primary btn-simple btn-round" style="border:1px solid black; color: black" type="button">Submit</button>
-                </div>
+            <div class="row" *ngIf="resolved==false && role=='ROLE_TEACHER'">
+                <app-status-form></app-status-form>
             </div>
         </div>
     </div>

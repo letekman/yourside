@@ -12,6 +12,10 @@ export class ReportListCaseComponent implements OnInit {
   report: ReportModel;
   @Input()
   link: number;
+  @Input()
+  role: string;
+  @Input()
+  resolved: boolean;
 
   constructor(private router: Router) { }
 
