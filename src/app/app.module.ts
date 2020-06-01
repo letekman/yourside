@@ -20,6 +20,7 @@ import { ReportComponent } from './components/report/report.component';
 import { TeacherReportComponent } from './components/teacher-report/teacher-report.component';
 import { ReportListCaseComponent } from './components/report-list-case/report-list-case.component';
 import { ReportDetailedComponent } from './components/report-detailed/report-detailed.component';
+import { HistoryReportsComponent } from './components/history-reports/history-reports.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { ReportDetailedComponent } from './components/report-detailed/report-det
         ReportComponent,
         TeacherReportComponent,
         ReportListCaseComponent,
-        ReportDetailedComponent
+        ReportDetailedComponent,
+        HistoryReportsComponent
     ],
     imports: [
         BrowserAnimationsModule,

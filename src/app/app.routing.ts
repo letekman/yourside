@@ -9,6 +9,7 @@ import {TeacherreviewsComponent} from './components/mainpanel/teacherreviews/tea
 import {ReportComponent} from './components/report/report.component';
 import {TeacherReportComponent} from "./components/teacher-report/teacher-report.component";
 import {ReportDetailedComponent} from "./components/report-detailed/report-detailed.component";
+import {HistoryReportsComponent} from "./components/history-reports/history-reports.component";
 
 
 const routes: Routes = [
@@ -18,8 +19,10 @@ const routes: Routes = [
     { path: 'review', component: ReviewTeacherComponent},
     { path: 'teacherList', component: TeacherreviewsComponent},
     { path: 'createReport', component: ReportComponent},
-    { path: 'teacherReports', component: TeacherReportComponent},
-    { path: 'teacherReports/:id', component: ReportDetailedComponent }
+    { path: 'activeReport', component: TeacherReportComponent},
+    { path: 'resolvedCases', component: HistoryReportsComponent},
+    { path: 'activeReport/:id', component: ReportDetailedComponent },
+    { path: 'resolvedCases/:id', component: ReportDetailedComponent }
 ];
 
 @NgModule({

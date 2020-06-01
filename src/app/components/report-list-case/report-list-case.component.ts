@@ -10,12 +10,13 @@ import {Router} from "@angular/router";
 export class ReportListCaseComponent implements OnInit {
   @Input()
   report: ReportModel;
-  link: string;
+  @Input()
+  link: number;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.link = `${this.report.id}`;
+    // this.link = `${this.report.id}`;
   }
 
 }
