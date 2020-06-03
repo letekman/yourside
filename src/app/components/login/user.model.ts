@@ -1,10 +1,23 @@
 export class UserModel {
     id: number;
     username: string;
-    roles: object[]
-    constructor(id: number, username: string, roles: object[]) {
+    role: string;
+    firstName: string;
+    lastName: string;
+    active: boolean;
+
+    constructor(id: number, username: string, role: string, firstName: string, lastName: string, active: boolean) {
         this.id = id;
         this.username = username;
-        this.roles = roles;
+        this.role = role;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.active = active;
     }
+
+// constructor(id: number, username: string, role: string) {
+    //     this.id = id;
+    //     this.username = username;
+    //     this.roles = roles;
+    // }
 }

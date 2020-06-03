@@ -5,7 +5,7 @@ export class ReportModel {
     victim: string;
     type: string;
     description: string;
-    status: string
+    status: string;
 
     constructor(id: number, role: string, perp: string, victim: string, type: string, status: string) {
         this.id = id;
