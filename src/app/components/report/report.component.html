@@ -7,14 +7,14 @@
             <p class="category">State your confidentiality preferences</p>
             <div class="form-check form-check-radio">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="anonRadios" id="anonRadio1" value="option1">
+                    <input class="form-check-input" type="radio" name="anonRadios" id="anonRadio1" [(ngModel)]="anonymous" [value]="true"/>
                     <span class="form-check-sign"></span>
                     I want to remain anonymous
                 </label>
             </div>
             <div class="form-check form-check-radio">
                 <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="anonRadios" id="anonRadio2" value="option2" checked>
+                    <input class="form-check-input" type="radio" name="anonRadios" id="anonRadio2" checked [(ngModel)]="anonymous" [value]="false" />
                     <span class="form-check-sign"></span>
                     I want the teacher to know who I am
                 </label>
@@ -24,18 +24,38 @@
     <br>
     <div class="row form-group offset-1">
         <div class="col-md-6 col-lg-4">
-            <p class="category">Provide the Full name of the perpetrator</p>
-            <div class="form-group">
-                <input type="text" value="" placeholder="Full name" class="form-control" #perp />
+            <p class="category">What was your role in the incident?</p>
+            <div class="form-check form-check-radio">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="roleRadios" id="roleRadio1" [(ngModel)]="role" [value]="'victim'"/>
+                    <span class="form-check-sign"></span>
+                    I was bullied
+                </label>
+            </div>
+            <div class="form-check form-check-radio">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="roleRadios" id="roleRadio2" checked [(ngModel)]="role" [value]="'bystander'" />
+                    <span class="form-check-sign"></span>
+                    I witnessed someone being bullied
+                </label>
             </div>
         </div>
     </div>
     <br>
     <div class="row form-group offset-1">
         <div class="col-md-6 col-lg-4">
+            <p class="category">Provide the Full name of the perpetrator</p>
+            <div class="form-group">
+                <input type="text" value="" placeholder="Full name" class="form-control" #perpname />
+            </div>
+        </div>
+    </div>
+    <br>
+    <div  class="row form-group offset-1">
+        <div class="col-md-6 col-lg-4">
             <p class="category">Provide the Full name of the victim</p>
             <div class="form-group">
-                <input type="text" value="" placeholder="Full name" class="form-control" #victim />
+                <input type="text" value="" placeholder="Full name" class="form-control" [disabled]="role === 'victim'" #victimname />
             </div>
         </div>
     </div>
@@ -46,9 +66,9 @@
             <div class="input-group mb-3">
                 <select class="custom-select" id="bullyingTypeSelect" #type>
                     <option selected>Physical</option>
-                    <option value="1">Psychological</option>
-                    <option value="2">Social Exclusion</option>
-                    <option value="3">Cyberbullying</option>
+                    <option>Psychological</option>
+                    <option>Social Exclusion</option>
+                    <option>Cyberbullying</option>
                 </select>
             </div>
         </div>
@@ -68,10 +88,11 @@
             <p class="category">Which teacher would you like to send the report to?</p>
             <div class="input-group mb-3">
                 <select class="custom-select" id="teacherSelect" #teacher>
-                    <option selected>Physical</option>
-                    <option value="1">Psychological</option>
-                    <option value="2">Social Exclusion</option>
-                    <option value="3">Cyberbullying</option>
+<!--                    <option selected>Physical</option>-->
+<!--                    <option value="1">Psychological</option>-->
+<!--                    <option value="2">Social Exclusion</option>-->
+<!--                    <option value="3">Cyberbullying</option>-->
+                    <option *ngFor="let teacheroption of teachers">{{teacheroption.id}}</option>
                 </select>
             </div>
         </div>
@@ -79,7 +100,7 @@
     <br>
     <div class="row form-group offset-1">
         <div class="col-md-6 col-lg-4">
-            <button type="button" class="btn btn-primary btn-lg " (click)="submitReport()">Submit report</button>
+            <button type="button" class="btn btn-primary btn-lg " (click)="submitReport(perpname.value, victimname.value, type.value, description.value, teacher.value)">Submit report</button>
         </div>
     </div>
     <br>
