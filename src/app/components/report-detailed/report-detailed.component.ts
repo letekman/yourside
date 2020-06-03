@@ -19,10 +19,10 @@ export class ReportDetailedComponent implements OnInit {
               private currentUserService: CurrentUserService) { }
 
   getReport() {
-    this.id = this.route.snapshot.paramMap.get("id");
+    this.id = this.route.snapshot.paramMap.get('id');
     this.reportDetailedService.getReport(this.id).subscribe(report => {
       this.report = report;
-      this.resolved = report.status == "RESOLVED";
+      this.resolved = report.status === 'RESOLVED';
     })
   }
 

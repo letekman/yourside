@@ -20,6 +20,8 @@ import { ReportListCaseComponent } from './components/report-list-case/report-li
 import { ReportDetailedComponent } from './components/report-detailed/report-detailed.component';
 import { HistoryReportsComponent } from './components/history-reports/history-reports.component';
 import { StatusFormComponent } from './components/status-form/status-form.component';
+import { RegisterComponent } from './components/register/register.component';
+import { IntroComponent } from './components/mainpanel/intro/intro.component';
 
 @NgModule({
     declarations: [
@@ -36,7 +38,9 @@ import { StatusFormComponent } from './components/status-form/status-form.compon
         ReportListCaseComponent,
         ReportDetailedComponent,
         HistoryReportsComponent,
-        StatusFormComponent
+        StatusFormComponent,
+        RegisterComponent,
+        IntroComponent
     ],
     imports: [
         BrowserAnimationsModule,
