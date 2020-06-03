@@ -1,25 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TeacherProfileModel} from './teacherprofile.model';
+import {TeacherProfilesService} from '../Service/teacher-profiles.service';
 
 @Component({
   selector: 'app-teacherprofile',
   templateUrl: './teacherprofile.component.html',
   styleUrls: ['./teacherprofile.component.css'],
-  styles: [' .star {\n' +
-  '      position: relative;\n' +
-  '      display: inline-block;\n' +
-  '      font-size: 2rem;\n' +
-  '      color: #d3d3d3;\n' +
-  '    }\n' +
-  '    .full {\n' +
-  '      color: red;\n' +
-  '    }\n' +
-  '    .half {\n' +
-  '      position: absolute;\n' +
-  '      display: inline-block;\n' +
-  '      overflow: hidden;\n' +
-  '      color: #347474;\n' +
-  '    }']
 })
 export class TeacherprofileComponent implements OnInit {
   @Input()
@@ -29,6 +15,7 @@ export class TeacherprofileComponent implements OnInit {
 
   constructor() {
   }
+
 
   ngOnInit(): void {
 
