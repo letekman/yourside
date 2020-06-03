@@ -11,7 +11,7 @@
                     <div class="content">
                         <div class="input-group form-group-no-border input-lg">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"></span>
+                                <span class="input-group-text">Login</span>
                             </div>
                             <input type="text" name="username"  [(ngModel)]="form.username"  #username="ngModel" class="form-control" placeholder="Login" required>
                             <div *ngIf="f.submitted && username.invalid">
@@ -20,7 +20,7 @@
                         </div>
                         <div class="input-group form-group-no-border input-lg">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"></span>
+                                <span class="input-group-text">Password</span>
                             </div>
                             <input type="password" name="password" [(ngModel)]="form.password"  #password="ngModel"  placeholder="Password" class="form-control" required minlength="6"/>
                             <div *ngIf="f.submitted && password.invalid">
@@ -28,19 +28,37 @@
                                 <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
                             </div>
                         </div>
+                        <div class="input-group form-group-no-border input-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">First name</span>
+                            </div>
+                            <input type="text" name="firstName" [(ngModel)]="form.firstName"  #firstName="ngModel"  placeholder="First name" class="form-control" required minlength="6"/>
+                            <div *ngIf="f.submitted && firstName.invalid">
+                                <div *ngIf="firstName.errors.required">First name is required</div>
+                            </div>
+                        </div>
+                        <div class="input-group form-group-no-border input-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Last name</span>
+                            </div>
+                            <input type="text" name="lastName" [(ngModel)]="form.lastName"  #lastName="ngModel"  placeholder="Last name" class="form-control" required minlength="6"/>
+                            <div *ngIf="f.submitted && lastName.invalid">
+                                <div *ngIf="lastName.errors.required">First name is required</div>
+                            </div>
+                        </div>
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Example select</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                            <label for="exampleFormControlSelect1">Role</label>
+                            <select name="role" [(ngModel)]="form.role"  #role="ngModel" required class="form-control" id="exampleFormControlSelect1">
+                                <option>Teacher</option>
+                                <option>Student</option>
                             </select>
+                            <div *ngIf="f.submitted && role.invalid">
+                                <div *ngIf="role.errors.required">Password is required</div>
+                            </div>
                         </div>
                     </div>
                     <div class="footer text-center">
-                        <button class="btn-success btn-round btn-lg btn-block">Log in</button>
+                        <button type="submit" class="btn-success btn-round btn-lg btn-block">Log in</button>
                     </div>
                 </form>
             </div>
