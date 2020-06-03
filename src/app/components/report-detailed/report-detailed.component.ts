@@ -28,7 +28,7 @@ export class ReportDetailedComponent implements OnInit {
 
   getUser() {
     this.currentUserService.getUser().subscribe(user => {
-      this.role = user.roles[0]['name'];
+      this.role = user.role['name'];
     })
   }
 

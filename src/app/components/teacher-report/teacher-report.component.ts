@@ -17,7 +17,7 @@ export class TeacherReportComponent implements OnInit {
   role: string
 
   getReports(userId: number) {
-    this.role = this.user.roles[0]['name'];
+    this.role = this.user.role['name'];
     if (this.role == 'ROLE_TEACHER')
     {
       this.teacherReportService.getReports(userId, "teacher", false).subscribe(reports => this.reports = reports);
