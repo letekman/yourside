@@ -16,8 +16,8 @@ const httpOptions = {
 
 export class AuthenticationService {
 
-  private loginUrl = 'http://localhost:8080/auth/signin';
-  private signupUrl = 'http://localhost:8080/auth/signup';
+  private loginUrl = 'https://yoursidebackend.azurewebsites.net/auth/signin';
+  private signupUrl = 'https://yoursidebackend.azurewebsites.net/auth/signup';
 
   constructor(private http: HttpClient) { }
 

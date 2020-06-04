@@ -13,7 +13,7 @@ export class ReportDetailedService {
   constructor(private http: HttpClient) { }
 
   public getReport = (id: string): Observable<ReportModel> => {
-    const url = `http://localhost:8080/restApi/reports/${id}`;
+    const url = `http://https://yoursidebackend.azurewebsites.net/restApi/reports/${id}`;
     return this.http.get<ReportModel>(url);
   }
 }
