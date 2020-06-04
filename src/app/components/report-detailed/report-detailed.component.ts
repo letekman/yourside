@@ -16,7 +16,7 @@ export class ReportDetailedComponent implements OnInit {
   reporter: UserModel;
   id: string;
   resolved: boolean;
-  role: string;
+  role: string
 
   constructor(private reportDetailedService: ReportDetailedService, private route: ActivatedRoute,
               private currentUserService: CurrentUserService) { }

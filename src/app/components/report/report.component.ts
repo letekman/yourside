@@ -3,6 +3,7 @@ import {TeacherReportService} from '../../services/teacher-report.service';
 import {CurrentUserService} from '../../services/current-user.service';
 import {UserModel} from '../login/user.model';
 import {ReportModel} from './report.model';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-report',
@@ -15,7 +16,8 @@ export class ReportComponent implements OnInit {
   teachers: UserModel[];
   currentUser: UserModel;
 
-  constructor(private teacherReportService: TeacherReportService, private currentUserService: CurrentUserService) { }
+  constructor(private router: Router, private teacherReportService: TeacherReportService,
+              private currentUserService: CurrentUserService) { }
 
   ngOnInit(): void {
     this.getTeachers();
@@ -49,6 +51,8 @@ export class ReportComponent implements OnInit {
     const role = this.role;
     const teacher = this.teachers.find(t => t.id === Number(teacherid));
     // console.log(teacher);
-    this.currentUserService.submitNewReport({perp, victim, type, description, teacher, anonymous, role, student} as ReportModel).subscribe()
+    this.currentUserService.submitNewReport({perp, victim, type, description, teacher, anonymous, role, student} as ReportModel).subscribe(() => {
+      this.router.navigate(['/activeReport']);
+    })
   }
 }
