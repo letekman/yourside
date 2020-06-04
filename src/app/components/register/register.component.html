@@ -32,7 +32,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">First name</span>
                             </div>
-                            <input type="text" name="firstName" [(ngModel)]="form.firstName"  #firstName="ngModel"  placeholder="First name" class="form-control" required minlength="6"/>
+                            <input type="text" name="firstName" [(ngModel)]="form.firstName"  #firstName="ngModel"  placeholder="First name" class="form-control" required />
                             <div *ngIf="f.submitted && firstName.invalid">
                                 <div *ngIf="firstName.errors.required">First name is required</div>
                             </div>
@@ -41,7 +41,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Last name</span>
                             </div>
-                            <input type="text" name="lastName" [(ngModel)]="form.lastName"  #lastName="ngModel"  placeholder="Last name" class="form-control" required minlength="6"/>
+                            <input type="text" name="lastName" [(ngModel)]="form.lastName"  #lastName="ngModel"  placeholder="Last name" class="form-control" required/>
                             <div *ngIf="f.submitted && lastName.invalid">
                                 <div *ngIf="lastName.errors.required">First name is required</div>
                             </div>

@@ -23,11 +23,12 @@ export class ReportComponent implements OnInit {
   }
 
   getTeachers() {
-    this.teacherReportService.getTeachers().subscribe(teachers => this.teachers = teachers)
+    this.teacherReportService.getTeachers().subscribe(teachers => this.teachers = teachers);
   }
 
   getCurrentUser() {
     this.currentUserService.getUser().subscribe(user => this.currentUser = user);
+
   }
 
   submitReport(perp: string, victim: string, type: string, description: string, teacherid: number): void {
