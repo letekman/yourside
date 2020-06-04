@@ -1,10 +1,10 @@
-<div class="wrapper">
+<div *ngIf="report" class="wrapper">
     <div class="page-header page-header-small" filter-color="orange">
         <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg11.jpg') ;">
         </div>
         <div class="container">
             <div class="content-center">
-                <h3 class="title">Anonym ({{report.role}}) </h3>
+                <h3 class="title" *ngIf="!report.anonymous; else anonymoustitle">{{reporter.firstName}} {{reporter.lastName}} ({{report.role}}) </h3>
                 <div class="elements">
                     <div>
                         <h3>Victim</h3>
@@ -32,3 +32,7 @@
         </div>
     </div>
 </div>
+
+<ng-template #anonymoustitle>
+    <h3 class="title">Anonymous reporter ({{report.role}})</h3>
+</ng-template>

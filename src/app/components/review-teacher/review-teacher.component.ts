@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ReportModel} from '../report/report.model';
+import {ReportDetailedService} from '../../services/report-detailed.service';
 
 @Component({
   selector: 'app-review-teacher',
@@ -8,7 +10,9 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class ReviewTeacherComponent implements OnInit {
 
-  constructor() { }
+  currentReport: ReportModel;
+
+  constructor(private reportDetailedService: ReportDetailedService) { }
 
   reviewForm = new FormGroup({
     commitmentRate: new FormControl('', Validators.required),
@@ -30,6 +34,7 @@ export class ReviewTeacherComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.getCurrentReport();
   }
 
 }

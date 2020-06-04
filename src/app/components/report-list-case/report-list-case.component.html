@@ -6,12 +6,17 @@
                 <th class="column-2">Perpetrator</th>
                 <th class="column-3">Type</th>
                 <th class="column-4">Status</th>
+<!--                <th class="column-5">Rate resolution</th>-->
             </tr>
             <tr>
                 <td class="column-1">{{report.victim}}</td>
                 <td class="column-2">{{report.perp}}</td>
                 <td class="column-3">{{report.type}}</td>
                 <td class="column-4">{{report.status}}</td>
+<!--                <td class="column-5">-->
+<!--                    <button class="btn btn-primary" [disabled]="report.status !== 'RESOLVED'">Rate</button>-->
+<!--                </td>-->
+            </tr>
         </table>
     </a>
 </div>

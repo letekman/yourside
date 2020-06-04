@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {ReportModel} from '../components/report-list-case/report-list-case.model';
+// import {ReportModel} from '../components/report-list-case/report-list-case.model';
 import {HttpClient} from '@angular/common/http';
 import {UserModel} from '../components/login/user.model';
+import {ReportModel} from '../components/report/report.model';
 
 @Injectable({
   providedIn: 'root'
