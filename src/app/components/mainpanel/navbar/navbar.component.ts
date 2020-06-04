@@ -1,4 +1,5 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
+import {TokenStorageService} from '../../../auth/token-storage.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +10,18 @@ export class NavbarComponent implements OnInit {
   private toggleButton: any;
   private sidebarVisible: boolean;
 
-  constructor(private element: ElementRef) {
+  public role: string;
+
+  constructor(private element: ElementRef, private tokenStorage: TokenStorageService) {
     this.sidebarVisible = false;
   }
 
   ngOnInit() {
     const navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+    if (this.tokenStorage.getToken()) {
+      this.role = this.tokenStorage.getAuthority();
+    }
   }
   sidebarOpen() {
     const toggleButton = this.toggleButton;
@@ -43,4 +49,10 @@ export class NavbarComponent implements OnInit {
       this.sidebarClose();
     }
   };
+
+
+  logout() {
+    this.tokenStorage.signOut();
+    window.location.reload();
+  }
 }
