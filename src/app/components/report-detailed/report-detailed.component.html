@@ -31,6 +31,12 @@
             </div>
         </div>
     </div>
+    <div class="section" *ngIf="resolved && role === 'ROLE_STUDENT'">
+        <div class="container">
+            <h3 class="title">Rate this report and teacher's commitment</h3>
+            <button class="btn btn-primary">Rate report</button>
+        </div>
+    </div>
 </div>
 
 <ng-template #anonymoustitle>
