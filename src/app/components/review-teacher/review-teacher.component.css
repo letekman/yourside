@@ -3,3 +3,22 @@
     color: white;
     font-size: 15px;
 }
+
+.items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+
+h4 {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.label {
+    margin-right: 20px;
+}
+.margin-top {
+    margin-top: 15px;
+}

@@ -17,4 +17,9 @@ export class ReportDetailedService {
     const url = `http://localhost:8080/restApi/reports/${id}`;
     return this.http.get<ReportModel>(url);
   }
+
+  public markStatus(id: string, status: string) {
+    const url = `http://localhost:8080/restApi/reports/${id}`;
+    this.http.patch(url, {"status": status});
+  }
 }

@@ -2,31 +2,36 @@
     <h4>Mark the status of this case: </h4>
     <div class="form-check form-check-radio">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="status" id="read" value="read" checked>
+            <input class="form-check-input" type="radio" name="status"
+                   id="read" value="READ" [ngModel]="status.status" (change)="onItemChange($event.target.value)">
             <span class="form-check-sign"></span>
             READ
         </label>
     </div>
     <div class="form-check form-check-radio">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="status" id="inprogress" value="inprogress">
+            <input class="form-check-input" type="radio" name="status" id="inprogress" value="INPROGRESS"
+                   [ngModel]="status.status" (change)="onItemChange($event.target.value)" >
             <span class="form-check-sign"></span>
             IN PROGRESS
         </label>
     </div>
     <div class="form-check form-check-radio">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="status" id="resolved" value="resolved">
+            <input class="form-check-input" type="radio" name="status" id="resolved" value="RESOLVED"
+                   [ngModel]="status.status" (change)="onItemChange($event.target.value)" >
             <span class="form-check-sign"></span>
             RESOLVED
         </label>
     </div>
     <div class="form-check form-check-radio">
         <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="status" id="unresolvable" value="unresolvable">
+            <input class="form-check-input" type="radio" name="status" id="unresolvable" value="UNRESOLVABLE"
+                   [ngModel]="status.status" (change)="onItemChange($event.target.value)" >
             <span class="form-check-sign"></span>
             UNRESOLVABLE
         </label>
     </div>
-    <button class="btn btn-primary btn-simple btn-round" style="border:1px solid black; color: black" type="button">Submit</button>
+    <button class="btn btn-primary btn-simple btn-round" style="border:1px solid black;
+    color: black" type="button" (click)="onSubmit()">Submit</button>
 </div>
