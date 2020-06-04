@@ -12,7 +12,7 @@ import {ReportModel} from './report.model';
 export class ReportComponent implements OnInit {
   anonymous = false;
   role = 'victim';
-  teachers: any[];
+  teachers: UserModel[];
   currentUser: UserModel;
 
   constructor(private teacherReportService: TeacherReportService, private currentUserService: CurrentUserService) { }
@@ -31,11 +31,12 @@ export class ReportComponent implements OnInit {
 
   }
 
-  submitReport(perp: string, victim: string, type: string, description: string, teacherid: number): void {
+  submitReport(perp: string, victim: string, type: string, description: string, teacherid: string): void {
     // console.log(perpname, victimname, type, description, teacher);
     // console.log(this.teachers);
-    console.log(this.teachers);
-    console.log(teacherid);
+    // console.log(this.teachers);
+    // console.log(teacherid);
+    // console.log(Number(this.teachers[0].id));
     if (this.role === 'victim') {
       if (this.anonymous) {
         victim = 'anonymous';
@@ -46,10 +47,8 @@ export class ReportComponent implements OnInit {
     const student = this.currentUser;
     const anonymous = this.anonymous;
     const role = this.role;
-    // const teacherfiltered = this.teachers.filter(t => t.id === teacherid);
-    // console.log(teacherfiltered);
-    // const teacher = teacherfiltered[0];
-    const teacher = this.teachers[0]; // TODO: remove that and add real choice of teacher
+    const teacher = this.teachers.find(t => t.id === Number(teacherid));
+    // console.log(teacher);
     this.currentUserService.submitNewReport({perp, victim, type, description, teacher, anonymous, role, student} as ReportModel).subscribe()
   }
 }
