@@ -37,8 +37,27 @@
             <button class="btn btn-primary" [routerLink]="['/review']">Rate report</button>
         </div>
     </div>
+    <div class="section">
+        <div class="container">
+            <h3 class="title">Messages:</h3>
+            <div *ngFor="let message of messages">
+                <p *ngIf="message.user.role['name'] === 'ROLE_STUDENT'; else teachermessage" style="font-weight: bold">Student: </p>
+                <p>{{message.text}}</p>
+            </div>
+        </div>
+        <div class="container" *ngIf="!resolved && !rated">
+            <div>
+                <textarea placeholder="Write new message here..." rows="4" cols="80" #newmessage></textarea>
+            </div>
+            <button class="btn btn-primary" (click)="sendMessage(newmessage.value); newmessage.value='';">Send message</button>
+        </div>
+    </div>
 </div>
 
 <ng-template #anonymoustitle>
     <h3 class="title">Anonymous reporter ({{report.role}})</h3>
+</ng-template>
+
+<ng-template #teachermessage>
+    <p style="font-weight: bold">Teacher: </p>
 </ng-template>

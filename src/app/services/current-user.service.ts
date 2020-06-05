@@ -4,6 +4,7 @@ import {Observable, of} from 'rxjs';
 import {UserModel} from '../components/login/user.model';
 import {ReportModel} from '../components/report/report.model';
 import {catchError, tap} from 'rxjs/operators';
+import {MessageModel} from '../components/report-detailed/message.model';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -26,6 +27,14 @@ export class CurrentUserService {
     return this.http.post<ReportModel>(url, report, httpOptions).pipe(
         tap((reportAdded: ReportModel) => this.log(`added report id=`)),
         catchError(this.handleError<ReportModel>('submitNewReport'))
+    );
+  }
+
+  sendMessage(message: MessageModel) {
+    const url = `http://localhost:8080/restApi/messages`;
+    return this.http.post<MessageModel>(url, message, httpOptions).pipe(
+        tap((messageAdded: MessageModel) => this.log(`added message text=`)),
+        catchError(this.handleError<MessageModel>('sendMessage'))
     );
   }
 
