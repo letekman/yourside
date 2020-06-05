@@ -16,7 +16,8 @@ export class ReportDetailedComponent implements OnInit {
   reporter: UserModel;
   id: string;
   resolved: boolean;
-  role: string
+  rated: boolean;
+  role: string;
 
   constructor(private reportDetailedService: ReportDetailedService, private route: ActivatedRoute,
               private currentUserService: CurrentUserService) { }
@@ -25,7 +26,8 @@ export class ReportDetailedComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     this.reportDetailedService.getReport(this.id).subscribe(report => {
       this.report = report;
-      this.resolved = (report.status === 'RESOLVED' || report.status === 'RATED');
+      this.resolved = report.status === 'RESOLVED';
+      this.rated = report.status === 'RATED';
       this.reporter = report.student;
     })
   }

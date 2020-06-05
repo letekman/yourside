@@ -26,12 +26,12 @@
         <div class="container">
             <h3 class="title">Description</h3>
             <h5 class="description" style="color: black">{{report.description}}</h5>
-            <div class="row" *ngIf="resolved==false && role=='ROLE_TEACHER'">
+            <div class="row" *ngIf="(!resolved && !rated) && role=='ROLE_TEACHER'">
                 <app-status-form [reportId]="id"></app-status-form>
             </div>
         </div>
     </div>
-    <div class="section" *ngIf="resolved && role === 'ROLE_STUDENT'">
+    <div class="section" *ngIf="(resolved && !rated) && role === 'ROLE_STUDENT'">
         <div class="container">
             <h3 class="title">Rate this report and teacher's commitment</h3>
             <button class="btn btn-primary" [routerLink]="['/review']">Rate report</button>
