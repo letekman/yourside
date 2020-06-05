@@ -25,7 +25,7 @@ export class ReportDetailedComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     this.reportDetailedService.getReport(this.id).subscribe(report => {
       this.report = report;
-      this.resolved = report.status === 'RESOLVED';
+      this.resolved = (report.status === 'RESOLVED' || report.status === 'RATED');
       this.reporter = report.student;
     })
   }
