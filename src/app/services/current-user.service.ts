@@ -17,12 +17,12 @@ export class CurrentUserService {
   constructor(private http: HttpClient) { }
 
   getUser(): Observable<UserModel> {
-    const url = `https://yoursidebackend.azurewebsites.net/restApi/users/getCurrentUser`;
+    const url = `http://yoursidebackend.azurewebsites.net/restApi/users/getCurrentUser`;
     return this.http.get<UserModel>(url);
   }
 
   submitNewReport(report: ReportModel) {
-    const url = `https://yoursidebackend.azurewebsites.net/restApi/reports`;
+    const url = `http://yoursidebackend.azurewebsites.net/restApi/reports`;
     return this.http.post<ReportModel>(url, report, httpOptions).pipe(
         tap((reportAdded: ReportModel) => this.log(`added report id=`)),
         catchError(this.handleError<ReportModel>('submitNewReport'))
