@@ -8,6 +8,7 @@
 .column-2 { width: 300px; }
 .column-3 { width: 225px; }
 .column-4 { width: 250px; }
+.column-5 { width: 250px; }
 
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); }

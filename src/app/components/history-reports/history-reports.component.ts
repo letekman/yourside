@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ReportModel} from "../report-list-case/report-list-case.model";
+// import {ReportModel} from "../report-list-case/report-list-case.model";
 import {CurrentUserService} from "../../services/current-user.service";
 import {TeacherReportService} from "../../services/teacher-report.service";
 import {UserModel} from "../login/user.model";
+import {ReportModel} from '../report/report.model';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class HistoryReportsComponent implements OnInit {
 
   reports: ReportModel[];
   user: UserModel;
-  role: string
+  role: string;
 
   getReports(userId: number) {
     this.role = this.user.role['name'];

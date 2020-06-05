@@ -92,7 +92,7 @@
 <!--                    <option value="1">Psychological</option>-->
 <!--                    <option value="2">Social Exclusion</option>-->
 <!--                    <option value="3">Cyberbullying</option>-->
-                    <option *ngFor="let teacheroption of teachers">{{teacheroption.firstName}}</option>
+                    <option *ngFor="let teacheroption of teachers" value="{{teacheroption.id}}">{{teacheroption.firstName}} {{teacheroption.lastName}}</option>
                 </select>
             </div>
         </div>
