@@ -45,6 +45,7 @@ export class ReviewTeacherComponent implements OnInit {
     updates[comments] = this.reviewForm.get('comment').value;
     const status = 'status';
     updates[status] = 'RATED';
+    updates['reviewed'] = true;
     console.log(updates);
     this.teacherReportService.updateRatings(updates).subscribe();
   }
