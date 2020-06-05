@@ -31,7 +31,7 @@ export class CurrentUserService {
   }
 
   sendMessage(message: MessageModel) {
-    const url = `http://localhost:8080/restApi/messages`;
+    const url = `http://yoursidebackend.azurewebsites.net/restApi/messages`;
     return this.http.post<MessageModel>(url, message, httpOptions).pipe(
         tap((messageAdded: MessageModel) => this.log(`added message text=`)),
         catchError(this.handleError<MessageModel>('sendMessage'))

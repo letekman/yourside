@@ -39,7 +39,7 @@ export class TeacherReportService {
 
   updateRatings(updates: {}): Observable<any> {
     const id = this.currentReport.id;
-    const url = `http://localhost:8080/restApi/reports/${id}`;
+    const url = `http://yoursidebackend.azurewebsites.net/restApi/reports/${id}`;
     return this.http.patch(url, updates, httpOptions).pipe(
         tap(_ => console.log(`patched report id=${id}`)),
         catchError(this.handleError<any>('updateRatings'))
