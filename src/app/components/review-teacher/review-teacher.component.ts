@@ -43,8 +43,8 @@ export class ReviewTeacherComponent implements OnInit {
     updates[speed] = parseInt(this.reviewForm.get('speedRate').value);
     const comments = 'comments';
     updates[comments] = this.reviewForm.get('comment').value;
-    // const status = 'status';
-    // updates[status] =
+    const status = 'status';
+    updates[status] = 'RATED';
     console.log(updates);
     this.teacherReportService.updateRatings(updates).subscribe();
   }
