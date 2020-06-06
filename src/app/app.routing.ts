@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {CommonModule,} from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
 import {Routes, RouterModule} from '@angular/router';
 import {LoginComponent} from './components/login/login.component';
@@ -20,7 +20,8 @@ const routes: Routes = [
         path: '', component: MainpanelComponent, children: [
             {
                 path: '',
-                component: IntroComponent,
+                redirectTo: 'activeReport',
+                pathMatch: 'full',
                 canActivate: [RoleBasedRestrictionGuard],
                 data: {role: ['ROLE_TEACHER', 'ROLE_STUDENT']}
             },
